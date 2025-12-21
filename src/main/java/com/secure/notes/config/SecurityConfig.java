@@ -56,6 +56,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests(req -> {
             req.requestMatchers(PUBLIC_URL).permitAll();
             req.requestMatchers("/oauth2/**").permitAll();
+            req.requestMatchers("/error").permitAll();
             req.requestMatchers("/api/audit/**").hasRole("ADMIN");
             req.anyRequest().authenticated();
         });
