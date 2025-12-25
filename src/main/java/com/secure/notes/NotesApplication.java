@@ -10,6 +10,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.TimeZone;
+
 @SpringBootApplication
 @RequiredArgsConstructor
 public class NotesApplication {
@@ -18,6 +20,7 @@ public class NotesApplication {
     private final UserService userService;
 
     public static void main(String[] args) {
+        TimeZone.setDefault(TimeZone.getTimeZone("Asia/Yangon"));
         SpringApplication.run(NotesApplication.class, args);
     }
 

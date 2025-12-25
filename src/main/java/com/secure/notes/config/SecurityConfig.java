@@ -43,7 +43,11 @@ public class SecurityConfig {
     @Autowired
     private OAuth2LoginSuccessHandler oAuth2LoginSuccessHandler;
 
-    private static final String[] PUBLIC_URL = {"/contact", "/api/public",  "/api/public/**"};
+    private static final String[] PUBLIC_URL = {
+            "/contact", "/api/public",  "/api/public/**",
+            "/swagger-ui/**", "/swagger-ui.html", "/swagger-resources", "/swagger-resources/**",
+            "/v3/api-docs", "/v3/api-docs/**"
+    };
     private static final String[] ADMIN_URL = {"/admin", "/admin/**"};
 
     @Bean
